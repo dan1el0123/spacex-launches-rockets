@@ -1,0 +1,16 @@
+.header {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    color: white;
+    border-bottom: 0.5px solid white;
+    background-color: transparent;
+    padding-bottom: 0.5rem;
+}
+
+.header > svg {
+    width: 3rem;
+    height: 3rem;
+}

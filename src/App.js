@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import Home from "./pages/Home/Home";
+import Rockets from "./pages/Rockets/Rockets";
+import SingleRocket from "./pages/SingleRocket/SingleRocket";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="rockets">
+                    <Route index element={<Rockets />} />
+                    <Route path=":rocketId" element={<SingleRocket />} />
+                </Route>
+                <Route path="*" element={<Navigate to="/" />} />
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;
