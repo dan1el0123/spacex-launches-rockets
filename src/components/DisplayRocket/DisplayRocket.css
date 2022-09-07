@@ -12,6 +12,10 @@
     letter-spacing: 0.1rem;
 }
 
+.rocket a {
+    text-decoration: none;
+}
+
 .rocket__name {
     font-size: 3rem;
 }

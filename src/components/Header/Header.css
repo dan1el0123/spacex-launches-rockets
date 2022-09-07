@@ -1,8 +1,9 @@
 .header {
     width: 100%;
     max-width: 1200px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     font-size: 1.5rem;
     color: white;
     border-bottom: 0.5px solid white;
@@ -13,4 +14,27 @@
 .header > svg {
     width: 3rem;
     height: 3rem;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.header__menu a {
+    text-decoration: none;
+}
+
+.header__item {
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.header__item:hover,
+.header__item:focus {
+    color: whitesmoke;
+    border-bottom: 1px solid white;
 }
