@@ -1,0 +1,21 @@
+.launches {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 20px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    .launches {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 900px) {
+    .launches {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
