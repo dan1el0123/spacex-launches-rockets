@@ -37,7 +37,7 @@ const Sidebar = ({ rocketId }) => {
             const docRef = await addDoc(collection(db, "comments"), {
                 rocketId,
                 message: newComment,
-                date: new Date().toLocaleString(),
+                date: new Date().toUTCString(),
             });
             console.log(docRef);
             setNewComment("");
