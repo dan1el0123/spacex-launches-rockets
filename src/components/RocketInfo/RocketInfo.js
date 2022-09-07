@@ -1,4 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
+import { Navigate } from "react-router-dom";
 import Loading from "../Loader/Loading";
 
 import "./RocketInfo.css";
@@ -41,6 +42,7 @@ const RocketInfo = ({ rocketId }) => {
 
     if (loading) return <Loading />;
     if (error) return <p>Error :{error.message}</p>;
+    if (!data.rocket) return <Navigate to="/" />;
 
     return (
         <div className="singleRocket__info">
