@@ -1,23 +1,27 @@
 import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 import Comment from "../Comment/Comment";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ rocketId }) => {
     const [newComment, setNewComment] = useState("");
     const [comments, setComments] = useState([]);
 
-    const handleNewComment = (e) => {
+    const handleNewComment = async (e) => {
         if (!newComment) return;
-        const id = comments.length ? comments[comments.length - 1].id + 1 : 1;
-        const date = new Date().toLocaleString();
-        const commentObj = {
-            id,
-            date,
-            message: newComment,
-        };
-        setComments((prev) => [...prev, commentObj]);
-        setNewComment("");
+        try {
+            const docRef = await addDoc(collection(db, "comments"), {
+                rocketId,
+                message: newComment,
+                date: new Date().toLocaleString(),
+            });
+            console.log(docRef);
+            setNewComment("");
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (

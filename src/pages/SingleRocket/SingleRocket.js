@@ -9,7 +9,7 @@ const SingleRocket = () => {
     return (
         <main className="singleRocket">
             <RocketInfo rocketId={rocketId} />
-            <Sidebar />
+            <Sidebar rocketId={rocketId} />
         </main>
     );
 };
