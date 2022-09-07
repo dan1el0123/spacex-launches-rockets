@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
+import { collection, addDoc, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import Comment from "../Comment/Comment";
@@ -8,6 +8,28 @@ import "./Sidebar.css";
 const Sidebar = ({ rocketId }) => {
     const [newComment, setNewComment] = useState("");
     const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        // LISTEN REAL TIME
+        const unsub = onSnapshot(
+            collection(db, "comments"),
+            (snapshot) => {
+                let list = [];
+                snapshot.docs.forEach((doc) => {
+                    list.push({ id: doc.id, ...doc.data() });
+                });
+                list = list.filter((comment) => comment.rocketId === rocketId);
+                setComments(list);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+        // unsubscribe on unmount
+        return () => {
+            unsub();
+        };
+    }, []);
 
     const handleNewComment = async (e) => {
         if (!newComment) return;
@@ -50,7 +72,11 @@ const Sidebar = ({ rocketId }) => {
 
             {comments.length ? (
                 comments.map((comment) => (
-                    <Comment date={comment.date} message={comment.message} />
+                    <Comment
+                        key={comment.id}
+                        date={comment.date}
+                        message={comment.message}
+                    />
                 ))
             ) : (
                 <div className="sidebar__empty">No comments to display.</div>
