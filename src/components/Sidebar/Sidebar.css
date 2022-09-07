@@ -1,0 +1,58 @@
+.sidebar {
+    width: 100%;
+    max-height: 600px;
+    max-width: 350px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    overflow-y: auto;
+    border: 0.5px solid white;
+    scrollbar-width: 2px;
+}
+
+.sidebar__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+}
+
+.sidebar__form label {
+    position: absolute;
+    left: -99999px;
+}
+
+.sidebar__textarea {
+    width: 100%;
+    min-height: 100px;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.sidebar__button {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 150px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.sidebar__button:hover {
+    background-color: whitesmoke;
+}
+
+.sidebar__empty {
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

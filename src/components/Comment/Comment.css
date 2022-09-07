@@ -1,0 +1,14 @@
+.comment {
+    padding: 5px;
+    border-top: 1px solid white;
+    margin-top: 5px;
+}
+
+.comment__date {
+    color: gray;
+}
+
+.comment__message {
+    font-size: 1rem;
+    color: white;
+}
