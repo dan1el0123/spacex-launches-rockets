@@ -1,0 +1,38 @@
+.singleRocket__info {
+    color: white;
+    padding: 10px;
+}
+
+.singleRocket__overview {
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.singleRocket__name {
+    font-size: 3rem;
+}
+
+.singleRocket__status {
+    font-weight: bold;
+}
+
+.singleRocket__desc {
+    font-size: 1.2rem;
+}
+
+.singleRocket__details,
+.singleRocket__engines {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.singleRocket__stat {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+}
