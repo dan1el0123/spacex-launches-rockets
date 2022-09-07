@@ -29,7 +29,7 @@ const Sidebar = ({ rocketId }) => {
         return () => {
             unsub();
         };
-    }, []);
+    }, [rocketId]);
 
     const handleNewComment = async (e) => {
         if (!newComment) return;
