@@ -1,0 +1,33 @@
+.rocket {
+    width: 100%;
+    height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    letter-spacing: 0.1rem;
+}
+
+.rocket__name {
+    font-size: 3rem;
+}
+
+.rocket__desc {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.rocket__button {
+    min-height: 50px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
